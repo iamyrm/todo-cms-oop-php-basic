@@ -22,7 +22,7 @@
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros,
                 pulvinar facilisis justo mollis, auctor consequat urna.
             </p>
-            <a href="article.html" class="btn btn-primary">Read More</a>
+            <a href="article.php" class="btn btn-primary">Read More</a>
         </div>
     </div>
     <!-- Blog Post 2 -->

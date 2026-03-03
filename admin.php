@@ -32,7 +32,7 @@
                         lacinia semper...
                     </td>
                     <td>
-                        <a href="edit-article.html?id=1" class="btn btn-sm btn-primary me-1">Edit</a>
+                        <a href="edit-article.php?id=1" class="btn btn-sm btn-primary me-1">Edit</a>
                         <button class="btn btn-sm btn-danger" onclick="confirmDelete(1)">Delete</button>
                     </td>
                 </tr>
@@ -47,7 +47,7 @@
                         vel nisi...
                     </td>
                     <td>
-                        <a href="edit-article.html?id=2" class="btn btn-sm btn-primary me-1">Edit</a>
+                        <a href="edit-article.php?id=2" class="btn btn-sm btn-primary me-1">Edit</a>
                         <button class="btn btn-sm btn-danger" onclick="confirmDelete(2)">Delete</button>
                     </td>
                 </tr>
