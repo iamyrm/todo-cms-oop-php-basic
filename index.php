@@ -1,11 +1,11 @@
-<?php include 'includes/header.php' ?>
+<?php
+include 'includes/header.php';
+include 'includes/navbar.php';
+include 'includes/hero.php';
 
-<!-- Navigation Bar -->
-<?php include 'includes/navbar.php' ?>
-
-<!-- Hero Section -->
-<?php include 'includes/hero.php' ?>
-
+$db = new Database();
+$db->dbConnection();
+?>
 <!-- Main Content -->
 <main class="container my-5">
     <!-- Blog Post 1 -->
