@@ -7,14 +7,14 @@ function base_url($path = "")
 
    $host = $_SERVER['HTTP_HOST'];
 
-   $baseUrl = $protocol . $host;
+   $baseUrl = $protocol . $host . '/' . PROJECT_DIR;
    return $baseUrl . '/' . ltrim($path, '/');
 }
 
 // Function to get base path
 function base_path($path = "")
 {
-   $rootPath = dirname(__DIR__);
+   $rootPath = dirname(__DIR__) . DIRECTORY_SEPARATOR . PROJECT_DIR;
    return $rootPath . DIRECTORY_SEPARATOR . ltrim($path, DIRECTORY_SEPARATOR);
 }
 
@@ -37,4 +37,14 @@ function redirect($url)
 {
    header('Location: ' . base_url($url));
    exit;
+}
+
+function isPostRequest()
+{
+   return $_SERVER['REQUEST_METHOD'] === "POST";
+}
+
+function getPostData($field, $default = null)
+{
+   return isset($_POST[$field]) ? trim($_POST[$field]) : $default;
 }

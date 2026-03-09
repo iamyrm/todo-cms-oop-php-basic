@@ -14,3 +14,4 @@ require_once 'functions/helpers.php';
 
 // Defile global constants
 define("APP_NAME", "CMS PDO SYSTEM");
+define ("PROJECT_DIR","todo-cms-oop-php");
