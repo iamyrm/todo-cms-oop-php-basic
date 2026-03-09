@@ -1,18 +1,35 @@
-<?php include 'includes/header.php' ?>
-<?php include 'includes/navbar.php' ?>
+<?php
+include 'includes/header.php';
+include 'includes/navbar.php';
+
+if (isPostRequest()) {
+    $email = getPostData('email');
+    $password = getPostData('password');
+
+    $user = new User();
+    if ($user->login($email, $password)) {
+        redirect('admin.php');
+    } else {
+        echo "Login Failed";
+    }
+}
+
+
+?>
 
 <!-- Main Content -->
 <main class="container my-5">
     <h2 class="text-center mb-4">Login</h2>
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <form action="dashboard.php" method="post">
+            <form method="post">
                 <div class="mb-3">
                     <label for="email" class="form-label">Email address *</label>
                     <input
                         type="email"
                         class="form-control"
                         id="email"
+                        name="email"
                         required>
                 </div>
                 <div class="mb-3">
@@ -21,6 +38,7 @@
                         type="password"
                         class="form-control"
                         id="password"
+                        name="password"
                         required>
                 </div>
                 <button type="submit" class="btn btn-primary w-100">Login</button>

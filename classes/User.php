@@ -21,8 +21,23 @@ class User
       $stmt->bindParam(':email', $email);
       $stmt->bindParam(':password', $hashed_password);
 
-      if($stmt->execute()){
+      if ($stmt->execute()) {
          return true;
+      }
+      return false;
+   }
+
+   public function login($email, $password)
+   {
+      $query = "SELECT * FROM " . $this->table . " WHERE email = :email";
+      $stmt = $this->conn->prepare($query);
+      $stmt->bindParam(':email', $email);
+      $stmt->execute();
+
+      $user = $stmt->fetch(PDO::FETCH_OBJ);
+
+      if ($user && password_verify($password, $user->password)) {
+         return $user->id;
       }
       return false;
    }
